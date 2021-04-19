@@ -4,7 +4,12 @@
     <item
         android:drawable="@drawable/circle"
         android:gravity="center"
-        android:right="3dp"/>
-    <item android:drawable="@drawable/ic_arrow_right"/>
+        android:right="2dp"/>
+    <item
+        android:drawable="@drawable/ic_arrow_right"
+        android:height="28dp"
+        android:width="28dp"
+        android:gravity="center"
+        />
 
 </layer-list>
