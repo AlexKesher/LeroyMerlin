@@ -9,4 +9,8 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
 
     fun getRecentlyWatchedProducts() = repository.getRecentlyWatchedProducts()
 
+    fun getLimitedOfferProducts() = repository.getLimitedOfferProducts()
+
+    fun getBestPriceProducts() = repository.getBestPriceProducts()
+
 }

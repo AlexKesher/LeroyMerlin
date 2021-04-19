@@ -34,10 +34,36 @@ class ApiServiceImpl : ApiService {
     }
 
     override fun getLimitedOfferProducts(): List<Product> {
-        TODO("Not yet implemented")
+        val limitedOffersList = mutableListOf<Product>()
+        for (i in 1..20) {
+            val product = if (i % 2 == 0) {
+                val price = (15..1100).random().toDouble()
+                Product("Ламинат Artens \"Тангай\" ${32 + i} класс толщина 8 мм 1.986 м2", price,
+                    R.drawable.laminat, "кор.")
+            } else {
+                val price = (15..2000).random().toDouble() + (0..99).random().toDouble() / 100
+                Product("Дрель-шуруповерт аккумуляторная $i Bosch GSR 120, 12 В Li-oin 2x2 Ач",
+                    price, R.drawable.drill, "шт.")
+            }
+            limitedOffersList.add(product)
+        }
+        return limitedOffersList.toList()
     }
 
     override fun getBestPriceProducts(): List<Product> {
-        TODO("Not yet implemented")
+        val bestPricesList = mutableListOf<Product>()
+        for (i in 1..20) {
+            val product = if (i % 2 == 0) {
+                val price = (15..1100).random().toDouble() + (0..99).random().toDouble() / 100
+                Product("Ламинат Artens \"Тангай\" ${20 + i} класс толщина 8 мм 1.986 м2", price,
+                    R.drawable.laminat, "кор.")
+            } else {
+                val price = (15..2000).random().toDouble()
+                Product("Дрель-шуруповерт аккумуляторная $i Bosch GSR 120, 12 В Li-oin 2x2 Ач",
+                    price, R.drawable.drill, "шт.")
+            }
+            bestPricesList.add(product)
+        }
+        return bestPricesList.toList()
     }
 }

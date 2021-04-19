@@ -42,27 +42,55 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         activity?.window?.statusBarColor = requireContext().getColor(R.color.brand_green)
         setMotionLayoutListener()
 
-        binding.rvGroups.adapter = GroupAdapter().also { it.submitList(viewModel.getGroups()) }
-        binding.rvGroups.setHasFixedSize(true)
+        setupGroupsRecyclerView()
 
         displayRecentlyWatchedItems()
 
+        setupLimitedOffersRecyclerView()
+
+        setupBestPricesRecyclerView()
+    }
+
+    private fun setupLimitedOffersRecyclerView() {
+        binding.rvLimitedOffers.apply {
+            adapter = ProductAdapter().also { it.submitList(viewModel.getLimitedOfferProducts()) }
+            setHasFixedSize(true)
+        }
+    }
+
+    private fun setupBestPricesRecyclerView() {
+        binding.rvBestPrices.apply {
+            adapter = ProductAdapter().also { it.submitList(viewModel.getBestPriceProducts()) }
+            setHasFixedSize(true)
+        }
+    }
+
+    private fun setupGroupsRecyclerView() {
+        binding.rvGroups.adapter = GroupAdapter().also { it.submitList(viewModel.getGroups()) }
+        binding.rvGroups.setHasFixedSize(true)
     }
 
     private fun displayRecentlyWatchedItems() {
         val recentProductsList = viewModel.getRecentlyWatchedProducts()
         if (recentProductsList.isNullOrEmpty()) {
-            binding.rvRecentProducts.visibility = View.GONE
-            binding.tvRecentProducts.visibility = View.GONE
+            hideRecentProducts()
         } else {
-            binding.rvRecentProducts.visibility = View.VISIBLE
-            binding.tvRecentProducts.visibility = View.VISIBLE
-
+            showRecentProducts()
             binding.rvRecentProducts.apply {
                 adapter = ProductAdapter().also { it.submitList(recentProductsList) }
                 setHasFixedSize(true)
             }
         }
+    }
+
+    private fun showRecentProducts() {
+        binding.rvRecentProducts.visibility = View.VISIBLE
+        binding.tvRecentProducts.visibility = View.VISIBLE
+    }
+
+    private fun hideRecentProducts() {
+        binding.rvRecentProducts.visibility = View.GONE
+        binding.tvRecentProducts.visibility = View.GONE
     }
 
     private fun setMotionLayoutListener() {
