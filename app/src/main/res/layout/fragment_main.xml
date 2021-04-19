@@ -1,10 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_motion_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_main_scene"
     tools:context=".ui.fragments.MainFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="196dp" />
+
+    <View
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/brand_green"
+        android:elevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:elevation="0dp"
+        android:text="Поиск товаров"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@id/search_view"
+        app:layout_constraintBottom_toTopOf="@id/search_view"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search_view"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/search_edit_text_background"
+        android:elevation="0dp"
+        android:hint="Поиск"
+        android:textSize="16sp"
+        android:paddingStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/search_btn"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/search_btn_background"
+        app:layout_constraintTop_toTopOf="@id/search_view"
+        app:layout_constraintBottom_toBottomOf="@id/search_view"
+        app:layout_constraintEnd_toEndOf="@id/search_view"
+        android:elevation="0dp"
+        app:srcCompat="@drawable/ic_search_for_btn"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/barcode_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="0dp"
+        android:background="@drawable/search_edit_text_background"
+        app:layout_constraintTop_toTopOf="@id/search_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_barcode"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollable_content"
@@ -14,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/guideline_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
-                android:layout_marginTop="280dp"
+                android:layout_marginTop="28dp"
                 android:orientation="horizontal"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
@@ -38,12 +107,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="400dp"
-                android:layout_marginBottom="400dp"
-                android:text="Предложение ограничено" />
+                android:layout_marginTop="52dp"
+                android:textSize="16sp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:text="Недавно просмотренные" />
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

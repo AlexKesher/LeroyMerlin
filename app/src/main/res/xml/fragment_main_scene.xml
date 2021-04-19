@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:motionInterpolator="easeInOut">
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@id/scrollable_content" />
+
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/toolbar"
+               motion:framePosition="0"
+               android:elevation="0dp">
+               <CustomAttribute
+                   motion:attributeName="backgroundColor"
+                   motion:customColorValue="@color/brand_green" />
+           </KeyAttribute>
+           <KeyAttribute
+               motion:motionTarget="@+id/toolbar"
+               motion:framePosition="48">
+               <CustomAttribute
+                   motion:attributeName="backgroundColor"
+                   motion:customColorValue="@color/brand_green" />
+           </KeyAttribute>
+           <KeyAttribute
+               motion:motionTarget="@+id/toolbar"
+               motion:framePosition="74" >
+               <CustomAttribute
+                   motion:attributeName="backgroundColor"
+                   motion:customColorValue="@color/white" />
+           </KeyAttribute>
+           <KeyAttribute
+               motion:motionTarget="@+id/toolbar"
+               motion:framePosition="99"
+               android:elevation="0dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/toolbar"
+               motion:framePosition="100"
+               android:elevation="4dp">
+               <CustomAttribute
+                   motion:attributeName="backgroundColor"
+                   motion:customColorValue="@color/white" />
+           </KeyAttribute>
+
+           <KeyAttribute
+               motion:motionTarget="@+id/barcode_btn"
+               motion:framePosition="0"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/barcode_btn"
+               motion:framePosition="48"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/barcode_btn"
+               motion:framePosition="74"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/barcode_btn"
+               motion:framePosition="100"
+               android:alpha="0" />
+
+           <KeyAttribute
+               motion:motionTarget="@+id/search_btn"
+               motion:framePosition="0"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/search_btn"
+               motion:framePosition="48"
+               android:alpha="1" />
+           <KeyAttribute
+               motion:motionTarget="@+id/search_btn"
+               motion:framePosition="74"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/search_btn"
+               motion:framePosition="100"
+               android:alpha="0" />
+
+           <KeyAttribute
+               motion:motionTarget="@+id/search_view"
+               motion:framePosition="0"
+               android:elevation="0dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/search_view"
+               motion:framePosition="99"
+               android:elevation="0dp" />
+           <KeyAttribute
+               motion:motionTarget="@+id/search_view"
+               motion:framePosition="100"
+               android:elevation="4dp" />
+       </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="80dp"
+            android:elevation="0dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@id/toolbar">
+        </Constraint>
+        <Constraint
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="0dp"
+            motion:layout_constraintStart_toStartOf="@id/search_view"
+            motion:layout_constraintBottom_toTopOf="@id/search_view"/>
+        <Constraint android:id="@+id/toolbar">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/brand_green" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="80dp"
+            android:elevation="4dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@id/toolbar">
+        </Constraint>
+        <Constraint
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:elevation="4dp"
+            motion:layout_constraintStart_toStartOf="@id/search_view"
+            motion:layout_constraintBottom_toTopOf="@id/search_view"/>
+        <Constraint
+            android:id="@+id/guideline_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintGuide_begin="56dp" />
+        <Constraint android:id="@+id/toolbar">
+        <CustomAttribute
+            motion:attributeName="backgroundColor"
+            motion:customColorValue="@color/white" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>
