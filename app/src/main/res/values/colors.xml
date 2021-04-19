@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brand_green">#FF52C440</color>
     <color name="light_grey">#FFF2F3F5</color>
+    <color name="bottom_text_grey">#9F9F9F</color>
+    <color name="text_grey">#808080</color>
+    <color name="bottom_icon_light_black">#121212</color>
+    <color name="bottom_icon_light_black_2">#1F1F1F</color>
 </resources>
