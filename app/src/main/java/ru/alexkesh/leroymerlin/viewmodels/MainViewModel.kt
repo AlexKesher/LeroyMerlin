@@ -7,4 +7,6 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
 
     fun getGroups() = repository.getGroups()
 
+    fun getRecentlyWatchedProducts() = repository.getRecentlyWatchedProducts()
+
 }

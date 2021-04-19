@@ -3,6 +3,7 @@ package ru.alexkesh.leroymerlin.data.remote
 import ru.alexkesh.leroymerlin.R
 import ru.alexkesh.leroymerlin.data.models.Group
 import ru.alexkesh.leroymerlin.data.models.Product
+import java.util.*
 
 class ApiServiceImpl : ApiService {
     override fun getGroups(): List<Group> {
@@ -18,7 +19,18 @@ class ApiServiceImpl : ApiService {
     }
 
     override fun getRecentlyWatchedProducts(): List<Product> {
-        TODO("Not yet implemented")
+        return listOf(
+            Product("Ламинат Artens \"Тангай\" 33 класс толщина 8 мм 1.986 м2", 930.60,
+                R.drawable.laminat, "кор."),
+            Product("Ламинат Artens \"Тангай\" 34 класс толщина 8 мм 1.986 м2", 556.0,
+                R.drawable.laminat, "кор."),
+            Product("Ламинат Artens \"Тангай\" 35 класс толщина 8 мм 1.986 м2", 93.14,
+                R.drawable.laminat, "кор."),
+            Product("Ламинат Artens \"Тангай\" 36 класс толщина 8 мм 1.986 м2", 1930.75,
+                R.drawable.laminat, "кор."),
+            Product("Ламинат Artens \"Тангай\" 37 класс толщина 8 мм 1.986 м2", 930.60,
+                R.drawable.laminat, "кор.")
+        )
     }
 
     override fun getLimitedOfferProducts(): List<Product> {

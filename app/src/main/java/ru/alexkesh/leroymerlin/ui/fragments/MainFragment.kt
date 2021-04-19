@@ -14,6 +14,7 @@ import ru.alexkesh.leroymerlin.data.remote.ApiServiceImpl
 import ru.alexkesh.leroymerlin.data.repository.RepositoryImpl
 import ru.alexkesh.leroymerlin.databinding.FragmentMainBinding
 import ru.alexkesh.leroymerlin.ui.adapters.GroupAdapter
+import ru.alexkesh.leroymerlin.ui.adapters.ProductAdapter
 import ru.alexkesh.leroymerlin.viewmodels.MainViewModel
 import ru.alexkesh.leroymerlin.viewmodels.MainViewModelFactory
 
@@ -44,6 +45,24 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding.rvGroups.adapter = GroupAdapter().also { it.submitList(viewModel.getGroups()) }
         binding.rvGroups.setHasFixedSize(true)
 
+        displayRecentlyWatchedItems()
+
+    }
+
+    private fun displayRecentlyWatchedItems() {
+        val recentProductsList = viewModel.getRecentlyWatchedProducts()
+        if (recentProductsList.isNullOrEmpty()) {
+            binding.rvRecentProducts.visibility = View.GONE
+            binding.tvRecentProducts.visibility = View.GONE
+        } else {
+            binding.rvRecentProducts.visibility = View.VISIBLE
+            binding.tvRecentProducts.visibility = View.VISIBLE
+
+            binding.rvRecentProducts.apply {
+                adapter = ProductAdapter().also { it.submitList(recentProductsList) }
+                setHasFixedSize(true)
+            }
+        }
     }
 
     private fun setMotionLayoutListener() {

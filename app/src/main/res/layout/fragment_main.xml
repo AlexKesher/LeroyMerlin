@@ -42,7 +42,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/search_edit_text_background"
         android:elevation="0dp"
         android:hint="Поиск"
@@ -105,14 +105,38 @@
                 tools:listitem="@layout/group_item" />
 
             <TextView
+                android:id="@+id/tv_recent_products"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="52dp"
-                android:textSize="16sp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:text="Недавно просмотренные" />
+                android:text="Недавно просмотренные"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_recentProducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="20"
+                tools:listitem="@layout/product_item" />
+
+            <TextView
+                android:id="@+id/tv_limited_offer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Предложение ограничено"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
