@@ -14,7 +14,10 @@
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <!-- Text options-->
         <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="fontFamily">@font/roboto_regular</item>
     </style>
 
     <style name="BottomNavigationView.Text" parent="@style/TextAppearance.AppCompat.Caption">

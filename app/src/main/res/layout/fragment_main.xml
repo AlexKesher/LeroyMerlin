@@ -24,19 +24,20 @@
         app:layout_constraintBottom_toTopOf="@id/guideline_toolbar"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:id="@+id/toolbar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:elevation="0dp"
+        android:textStyle="bold"
         android:text="Поиск товаров"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="@id/search_view"
         app:layout_constraintBottom_toTopOf="@id/search_view"/>
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <EditText
         android:id="@+id/search_view"
         android:layout_width="0dp"
         android:layout_height="46dp"
@@ -52,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/toolbar" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <ImageButton
         android:id="@+id/search_btn"
         android:layout_width="48dp"
         android:layout_height="40dp"
@@ -64,7 +65,7 @@
         android:elevation="0dp"
         app:srcCompat="@drawable/ic_search_for_btn"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <ImageButton
         android:id="@+id/barcode_btn"
         android:layout_width="48dp"
         android:layout_height="48dp"
