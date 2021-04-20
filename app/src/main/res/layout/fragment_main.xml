@@ -31,7 +31,7 @@
         android:layout_marginBottom="16dp"
         android:elevation="0dp"
         android:textStyle="bold"
-        android:text="Поиск товаров"
+        android:text="@string/products_search"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="@id/search_view"
@@ -46,7 +46,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/search_edit_text_background"
         android:elevation="0dp"
-        android:hint="Поиск"
+        android:hint="@string/search"
         android:textSize="16sp"
         android:paddingStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
                 android:layout_marginTop="32dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Недавно просмотренные"
+                android:text="@string/recently_watched"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
                 android:layout_marginTop="32dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Предложение ограничено"
+                android:text="@string/limited_offer"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -159,7 +159,7 @@
                 android:layout_marginTop="32dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="Лучшая цена"
+                android:text="@string/best_price"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

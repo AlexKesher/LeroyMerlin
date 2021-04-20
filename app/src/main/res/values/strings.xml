@@ -5,4 +5,9 @@
     <string name="shops">Магазины</string>
     <string name="profile">Профиль</string>
     <string name="cart">Корзина</string>
+    <string name="products_search">Поиск товаров</string>
+    <string name="search">Поиск</string>
+    <string name="recently_watched">Недавно просмотренные</string>
+    <string name="limited_offer">Предложение ограничено</string>
+    <string name="best_price">Лучшая цена</string>
 </resources>
